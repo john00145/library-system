@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+ <th:block th:replace="views/frontend/auth-login/fragments/head :: head"></th:block>
+<body>
+<div id="auth">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 col-sm-12 mx-auto">
+                <div class="card pt-2">
+                    <div class="card-body">
+                        <include th:replace="views/frontend/auth-login/fragments/signin-form :: sign-in-form"></include>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/assets/js/feather-icons/feather.min.js"></script>
+<script src="/assets/js/app.js"></script>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

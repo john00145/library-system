@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--meta-->
+    <include th:replace="views/backend/components/meta :: metas"></include>
+
+    <title>Books | Admin Dashboard</title>
+
+    <!--styles-->
+    <include th:replace="views/backend/components/styles :: styles"></include>
+</head>
+<body>
+
+<div id="app">
+
+    <!--start sidebar-->
+    <include th:replace="views/backend/components/sidebar :: sidebar"></include>
+    <!--end sidebar-->
+
+    <div id="main">
+
+        <!--start navigation-->
+        <include th:replace="views/backend/components/navigation :: nav"></include>
+        <!--end navigation-->
+
+        <!--================================================================-->
+        <div class="main-content container-fluid">
+            <div class="page-title">
+                <div class="row">
+                    <div class="col-12 col-md-6 order-md-1 order-last">
+                        <h3>Update Books</h3>
+                        <p class="text-subtitle text-muted">There's a lot of form layout that you can use</p>
+                    </div>
+                    <div class="col-12 col-md-6 order-md-2 order-first">
+                        <nav aria-label="breadcrumb" class='breadcrumb-header'>
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="dashboard">Dashboard</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Update Books</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- // Basic multiple Column Form section start -->
+            <section id="multiple-column-form">
+                <div class="row match-height">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Update Books</h4>
+                            </div>
+                            <div class="card-content">
+                                <div class="card-body">
+                                    <form class="form">
+                                        <div class="row">
+
+                                            <div class="col-md-12 col-12">
+                                                <div class="form-group">
+                                                    <label for="title-column">Title</label>
+                                                    <input type="text" id="title-column" class="form-control" placeholder="Title" name="" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-12 col-12">
+                                                <div class="form-group">
+                                                    <label for="author-column">Author</label>
+                                                    <input type="text" id="author-column" class="form-control" placeholder="Author" name="" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-12 col-12">
+                                                <div class="form-group">
+                                                    <label for="publication-date-column">Publication Date</label>
+                                                    <input type="date" id="publication-date-column" class="form-control" name="" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-12 col-12">
+                                                <div class="form-group">
+                                                    <label for="genre-column">Genre</label>
+                                                    <input type="text" id="genre-column" class="form-control" placeholder="Genre Book" name="" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-12 col-12">
+                                                <div class="form-group">
+                                                    <label for="summary-column">Summary</label>
+                                                    <input type="number" id="summary-column" class="form-control" placeholder="Summary" name="" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group col-12">
+                                                <div class="form-check">
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" id="checkbox5" class="form-check-input" style="cursor: pointer">
+                                                        <label for="checkbox5">Remember Me</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 d-flex justify-content-end">
+                                                <button type="submit" class="btn btn-primary me-1 mb-2 round" >
+                                                    <i data-feather="edit-2" width="20"></i>
+                                                    Update
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- // Basic multiple Column Form section end -->
+
+
+        </div>
+
+    </div>
+</div>
+
+<!--scripts-->
+<include th:replace="views/backend/components/scripts :: scripts"></include>
+</body>
+</html>

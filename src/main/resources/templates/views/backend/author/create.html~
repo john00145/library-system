@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!--meta-->
+    <include th:replace="views/backend/components/meta :: metas"></include>
+
+    <title>Author | Admin Dashboard</title>
+
+    <!--styles-->
+    <include th:replace="views/backend/components/styles :: styles"></include>
+</head>
+<body>
+
+<div id="app">
+
+    <!--start sidebar-->
+    <include th:replace="views/backend/components/sidebar :: sidebar"></include>
+    <!--end sidebar-->
+
+    <div id="main">
+
+        <!--start navigation-->
+        <include th:replace="views/backend/components/navigation :: nav"></include>
+        <!--end navigation-->
+
+<!--================================================================-->
+        <div class="main-content container-fluid">
+            <div class="page-title">
+                <div class="row">
+                    <div class="col-12 col-md-6 order-md-1 order-last">
+                        <h3>Author</h3>
+                        <p class="text-subtitle text-muted">There's a lot of form layout that you can use</p>
+                    </div>
+                    <div class="col-12 col-md-6 order-md-2 order-first">
+                        <nav aria-label="breadcrumb" class='breadcrumb-header'>
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Add Author</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- // Basic multiple Column Form section start -->
+            <section id="multiple-column-form">
+                <div class="row match-height">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Multiple Column</h4>
+                            </div>
+                            <div class="card-content">
+                                <div class="card-body">
+                                    <form class="form">
+                                        <div class="row">
+
+                                            <div class="col-md-6 col-12">
+                                                <div class="form-group">
+                                                    <label for="firstname-column">FirstName</label>
+                                                    <input type="text" id="firstname-column" class="form-control" placeholder="FirstName">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6 col-12">
+                                                <div class="form-group">
+                                                    <label for="lastname-column">LastName</label>
+                                                    <input type="text" id="lastname-column" class="form-control" placeholder="LastName">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6 col-12">
+                                                <div class="form-group">
+                                                    <label for="email-column">Email</label>
+                                                    <input type="email" id="email-column" class="form-control" placeholder="Email">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group col-12">
+                                                <div class='form-check'>
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" id="checkbox5" class='form-check-input' checked>
+                                                        <label for="checkbox5">Remember Me</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 d-flex justify-content-center">
+                                                <div class="col-12 d-flex justify-content-end">
+                                                    <button type="submit" class="btn btn-primary me-1 mb-2 round" >
+                                                        <i data-feather="send" width="20"></i>
+                                                        Submit
+                                                    </button>
+                                                    <a href="author">
+                                                        <button type="button" class="btn btn-secondary me-1 mb-2 round">Cancel</button>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- // Basic multiple Column Form section end -->
+
+
+        </div>
+
+    </div>
+</div>
+
+    <!--scripts-->
+    <include th:replace="views/backend/components/scripts :: scripts"></include>
+
+</body>
+</html>

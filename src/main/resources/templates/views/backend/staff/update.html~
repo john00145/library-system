@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!--meta-->
+    <include th:replace="views/backend/components/meta :: metas"></include>
+
+    <title>Staff | Admin Dashboard</title>
+
+    <!--styles-->
+    <include th:replace="views/backend/components/styles :: styles"></include>
+</head>
+<body>
+
+<div id="app">
+
+    <!--start sidebar-->
+    <include th:replace="views/backend/components/sidebar :: sidebar"></include>
+    <!--end sidebar-->
+
+    <div id="main">
+
+        <!--start navigation-->
+        <include th:replace="views/backend/components/navigation :: nav"></include>
+        <!--end navigation-->
+
+<!--================================================================-->
+        <div class="main-content container-fluid">
+            <div class="page-title">
+                <div class="row">
+                    <div class="col-12 col-md-6 order-md-1 order-last">
+                        <h3>Staff</h3>
+                        <p class="text-subtitle text-muted">There's a lot of form layout that you can use</p>
+                    </div>
+                    <div class="col-12 col-md-6 order-md-2 order-first">
+                        <nav aria-label="breadcrumb" class='breadcrumb-header'>
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Update Staff</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- // Basic multiple Column Form section start -->
+            <section id="multiple-column-form">
+                <div class="row match-height">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Multiple Column</h4>
+                            </div>
+                            <div class="card-content">
+                                <div class="card-body">
+                                    <form class="form">
+                                        <div class="row">
+
+
+                                            <div class="col-md-4 col-12">
+                                                <div class="form-group">
+                                                    <label for="id-column">ID</label>
+                                                    <input type="text" id="id-column" class="form-control" placeholder="000" name="id-column" disabled>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-8 col-12">
+                                                <div class="form-group">
+                                                    <label for="firstname-column">First Name</label>
+                                                    <input type="text" id="firstname-column" class="form-control" disabled>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-12 col-12">
+                                                <div class="form-group">
+                                                    <label for="lastname-column">Last Name</label>
+                                                    <input type="text" id="lastname-column" class="form-control" disabled>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-md-12 col-12">
+                                                <div class="form-group">
+                                                    <label for="email-column">Email</label>
+                                                    <input type="email" id="email-column" class="form-control" disabled>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-12 col-12">
+                                                <div class="form-group">
+                                                    <label for="phone-column">Phone</label>
+                                                    <input type="number" id="phone-column" class="form-control" disabled>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-12 col-12">
+                                                <div class="form-group">
+                                                    <label for="role-column">Role</label>
+                                                    <input type="text" id="role-column" class="form-control" disabled>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group col-12">
+                                                <div class='form-check'>
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" id="checkbox5" class='form-check-input' checked>
+                                                        <label for="checkbox5">Remember Me</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 d-flex justify-content-center">
+                                                <div class="col-12 d-flex justify-content-end">
+                                                    <button type="button" id="edit-btn" class="btn btn-primary me-1 mb-2 round" onclick="editMode()">Edit</button>
+                                                    <button type="button" id="update-btn" class="btn btn-success me-1 mb-2 round" style="display: none;" onclick="updateMode()">Update</button>
+                                                    <button type="button" id="cancel-btn" class="btn btn-secondary me-1 mb-2 round" style="display: none;" onclick="cancelEdit()">Cancel</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- // Basic multiple Column Form section end -->
+
+
+        </div>
+
+    </div>
+</div>
+
+    <!--scripts-->
+    <include th:replace="views/backend/components/scripts :: scripts"></include>
+
+
+
+<!--edit / cancel / update / input, textarea-->
+<script>
+    function editMode() {
+        // Show update and cancel buttons
+        document.getElementById("update-btn").style.display = "inline-block";
+        document.getElementById("cancel-btn").style.display = "inline-block";
+        document.getElementById("edit-btn").style.display = "none";
+
+        // Enable input fields
+        enableEditing();
+    }
+
+    function updateMode() {
+        // Perform the update logic here (e.g., sending data to the server)
+        console.log("Updating data...");
+
+        // Reset buttons
+        resetButtons();
+    }
+
+    function cancelEdit() {
+        // Reset the form to original values (implement fetching original data if necessary)
+        resetForm();
+
+        // Reset buttons
+        resetButtons();
+    }
+
+    // Enable editing of form fields
+    function enableEditing() {
+        var inputs = document.querySelectorAll("input[type='text'], input[type='email'], input[type='number']"); // Select input fields
+        inputs.forEach(function(input) {
+            input.removeAttribute("disabled"); // Enable input fields
+        });
+    }
+
+    // Reset the form fields to original values
+    function resetForm() {
+        document.getElementById("firstname-column").value = ""; // Replace with actual data if available
+        document.getElementById("lastname-column").value = ""; // Replace with actual data if available
+        document.getElementById("email-column").value = ""; // Replace with actual data if available
+        document.getElementById("phone-column").value = ""; // Replace with actual data if available
+        document.getElementById("role-column").value = ""; // Replace with actual data if available
+
+        // Disable inputs
+        disableEditing();
+    }
+
+    // Reset buttons to original state
+    function resetButtons() {
+        document.getElementById("edit-btn").style.display = "inline-block"; // Show edit button
+        document.getElementById("update-btn").style.display = "none"; // Hide update button
+        document.getElementById("cancel-btn").style.display = "none"; // Hide cancel button
+    }
+
+    // Disable editing after update or cancel
+    function disableEditing() {
+        var inputs = document.querySelectorAll("input[type='text'], input[type='email'], input[type='number']"); // Select input fields
+        inputs.forEach(function(input) {
+            input.setAttribute("disabled", true); // Disable input fields
+        });
+    }
+</script>
+
+</body>
+</html>

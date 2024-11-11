@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--meta-->
+    <include th:replace="views/backend/components/meta :: metas"></include>
+
+    <title>Membership | Admin Dashboard</title>
+
+    <!--styles-->
+    <include th:replace="views/backend/components/styles :: styles"></include>
+</head>
+<body>
+
+<div id="app">
+
+    <!--start sidebar-->
+    <include th:replace="views/backend/components/sidebar :: sidebar"></include>
+    <!--end sidebar-->
+
+    <div id="main">
+
+        <!--start navigation-->
+        <include th:replace="views/backend/components/navigation :: nav"></include>
+        <!--end navigation-->
+
+        <!--================================================================-->
+        <div class="main-content container-fluid">
+            <div class="page-title">
+                <div class="row">
+                    <div class="col-12 col-md-6 order-md-1 order-last">
+                        <h3>Update Membership</h3>
+                        <p class="text-subtitle text-muted">There's a lot of form layout that you can use</p>
+                    </div>
+                    <div class="col-12 col-md-6 order-md-2 order-first">
+                        <nav aria-label="breadcrumb" class='breadcrumb-header'>
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="dashboard">Dashboard</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Update Membership</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- // Basic multiple Column Form section start -->
+            <section id="multiple-column-form">
+                <div class="row match-height">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Update Membership</h4>
+                            </div>
+                            <div class="card-content">
+                                <div class="card-body">
+                                    <form class="form">
+                                        <div class="row">
+
+                                            <div class="col-md-12 col-12">
+                                                <div class="form-group">
+                                                    <label for="id-column">ID</label>
+                                                    <input type="hidden" id="id-column" class="form-control" placeholder="0001" name="id-column" disabled>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4 col-12">
+                                                <label for="membership-id-column">Membership ID Look up:</label>
+                                                <fieldset class="form-group" disabled>
+                                                    <select class="form-select" id="membership-id-column">
+                                                        <option value=""></option>
+                                                    </select>
+                                                </fieldset>
+                                            </div>
+
+                                            <div class="col-md-4 col-12">
+                                                <label for="library-id-column">library ID Look up:</label>
+                                                <fieldset class="form-group" disabled>
+                                                    <select class="form-select" id="library-id-column">
+                                                        <option value=""></option>
+                                                    </select>
+                                                </fieldset>
+                                            </div>
+
+                                            <div class="col-md-4 col-12">
+                                                <label for="membership-type-column">Membership Type:</label>
+                                                <fieldset class="form-group" disabled>
+                                                    <select class="form-select" id="membership-type-column">
+                                                        <option value="Regular">Regular</option>
+                                                        <option value="Student">Student</option>
+                                                        <option value="VIP">VIP</option>
+                                                        <option value="Senior">Senior</option>
+                                                    </select>
+                                                </fieldset>
+                                            </div>
+
+                                            <div class="col-md-6 col-12">
+                                                <div class="form-group">
+                                                    <label for="start-date-column">Start Date</label>
+                                                    <input type="date" id="start-date-column" class="form-control" name="membership-date-column" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-12">
+                                                <div class="form-group">
+                                                    <label for="end-date-column">End Date</label>
+                                                    <input type="date" id="end-date-column" class="form-control" name="membership-date-column" disabled>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group col-12">
+                                                <div class="form-check">
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" id="checkbox5" class="form-check-input" style="cursor: pointer">
+                                                        <label for="checkbox5">Remember Me</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 d-flex justify-content-end">
+                                                <button type="submit" class="btn btn-primary me-1 mb-2 round" >Update</button>
+
+                                                <a href="/membership">
+                                                    <button type="button" class="btn btn-danger me-1 mb-2 round">Cancel</button>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- // Basic multiple Column Form section end -->
+
+
+        </div>
+
+    </div>
+</div>
+
+<!--scripts-->
+<include th:replace="views/backend/components/scripts :: scripts"></include>
+
+</body>
+</html>
